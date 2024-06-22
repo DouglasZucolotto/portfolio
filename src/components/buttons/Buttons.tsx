@@ -1,23 +1,19 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { MouseEventHandler } from 'react'
 import * as S from './style'
 
-type ButtonTypes = 'transparent' | 'primary'
+type ButtonType = 'primary' | 'transparent' 
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode
-  buttonType?: ButtonTypes
+interface ButtonProps {
+  children : React.ReactNode
+  onClick: MouseEventHandler<HTMLButtonElement>
+  type?: ButtonType
 }
 
-const buttons = {
-  transparent: S.TransparentBtn,
-  primary: S.PrimaryBtn
-}
-
-export const Buttons = ({
-  children,
-  buttonType = 'primary',
-  ...rest
-}: ButtonProps) => {
-  const Component = buttons[buttonType]
-  return <Component {...rest}>{children}</Component>
+export const Buttons = ({children, onClick, type = 'primary'} : ButtonProps) => {
+  switch (type) {
+    case 'primary':
+      return <S.PrimaryBtn onClick={onClick}>{children}</S.PrimaryBtn>
+    case 'transparent':
+      return <S.TransparentBtn onClick={onClick}>{children}</S.TransparentBtn>  
+  }
 }
