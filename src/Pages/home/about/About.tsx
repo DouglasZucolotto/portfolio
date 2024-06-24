@@ -1,7 +1,7 @@
 import * as S from './style'
 import MyPic from '../../../img/AvatarAndIcons.svg'
 import { Chip } from '../../../components/chip/Chip'
-import { LinkedIn, GitHub } from '@mui/icons-material'
+import { LinkedIn, GitHub, WhatsApp, Download } from '@mui/icons-material'
 import { Buttons } from '../../../components/buttons/Buttons'
 
 export const About = () => {
@@ -38,7 +38,12 @@ export const About = () => {
           🚀 Tentando ser um pouquinho melhor do que ontem todos dias.
         </div>
         <div className="buttons">
-          <Buttons onClick={() => console.log()}>Vamos conversar</Buttons>
+          <Buttons onClick={() => console.log()}>
+            <WhatsApp /> Vamos conversar
+          </Buttons>
+          <Buttons onClick={() => console.log()}>
+            <Download /> Baixar CV
+          </Buttons>
         </div>
       </div>
     </S.About>

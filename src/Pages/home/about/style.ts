@@ -7,12 +7,15 @@ export const About = styled.div`
   .name {
     color: ${colors.white.main};
     font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .job {
     display: flex;
     align-items: center;
     color: #898989;
+    margin-bottom: 20px;
   }
 
   .job > div {
@@ -35,6 +38,12 @@ export const About = styled.div`
 
   .better {
     margin-top: 40px;
-    color: #898989
+    color: #898989;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 60px;
   }
 `
